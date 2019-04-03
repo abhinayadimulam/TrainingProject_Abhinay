@@ -5,9 +5,18 @@ public class Customer {
 	//PROPERTIES
 	private int id;
 	private String Name;
-	//private String lastName;
+	private String lastName;
 	private String email;
 	private String password;
+	private String firstnameName;
+	private String gender;
+	private String address;
+	private String city;
+	private String zip;
+	private String state;
+	private String country;
+	private String contact;
+	
 	
 	public Customer() {
 	}
@@ -45,9 +54,13 @@ public class Customer {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
 	@Override
 	public String toString() {
-		return "Customer [id=" + id + ", Name=" + Name + ", email=" + email + ", password=" + password + "]";
+		return "Customer [id=" + id + ", Name=" + Name + ", lastName=" + lastName + ", email=" + email + ", password="
+				+ password + ", firstnameName=" + firstnameName + ", gender=" + gender + ", address=" + address
+				+ ", city=" + city + ", zip=" + zip + ", state=" + state + ", country=" + country + ", contact="
+				+ contact + "]";
 	}
+	
+	
 }

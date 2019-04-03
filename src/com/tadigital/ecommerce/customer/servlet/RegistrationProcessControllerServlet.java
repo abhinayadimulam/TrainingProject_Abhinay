@@ -16,7 +16,7 @@ import com.tadigital.ecommerce.customer.service.*;
 public class RegistrationProcessControllerServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		RequestDispatcher rd = req.getRequestDispatcher("SignInSignUpforms.html");
+		RequestDispatcher rd = req.getRequestDispatcher("SignInSignUpforms.jsp");
 		rd.forward(req, resp);
 	}
 	
