@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 import com.tadigital.ecommerce.customer.entity.Customer;
 
 public class CustomerDao extends Dao {
@@ -60,6 +62,134 @@ public class CustomerDao extends Dao {
 		return status;
 	}
 	
+	public static boolean updateCustomer(String oldpass, String newpass) {
+		boolean status = false;
+		String oldpas=oldpass;
+		String newpas=newpass;
+		Connection con = openConnection();
+		Statement stmt = openStatement(con);
+		
+		try {
+			String sql = "UPDATE cust_info " +
+						 "SET cust_pwd='"+newpass+"' WHERE cust_pwd='"+oldpas+"'";
+			
+			int rows = stmt.executeUpdate(sql);
+			if(rows != 0) {
+				status = true;
+			}
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+		} finally {
+			closeStatement(stmt);
+			closeConnection(con);
+		}
+		
+		return status;
+	}
+	public static boolean updateCustomerdetails(String fname,String lname,String gender,String address,String city,String zip,String state,String country,String cont,String mail) {
+		boolean status = false;
+		Connection con = openConnection();
+		Statement stmt = openStatement(con);
+		
+		
+		try {
+			StringBuffer sql = new StringBuffer("UPDATE cust_info SET ");
+			boolean flag=false;
+			
+			if(fname!="")
+			{
+				sql.append("cust_fname='"+ fname + "'");
+				flag=true;
+			}
+			
+			if(lname!="")
+			{
+				if(flag)
+					sql.append(",");
+				sql.append("cust_lname='"+lname + "'");
+				flag=true;
+			}
+			
+			if(gender!="")
+			{
+				if(flag)
+					sql.append(",");
+				sql.append("cust_gen='"+gender + "'");
+				flag=true;
+			}
+			
+			if(address!="")
+			{
+				if(flag)
+					sql.append(",");
+				sql.append("cust_addr='"+address + "'");
+				flag=true;
+			}
+			
+			if(city!="")
+			{
+				if(flag)
+					sql.append(",");
+				sql.append("cust_city='"+city + "'");
+				flag=true;
+			}
+			
+			if(zip!="")
+			{
+				if(flag)
+					sql.append(",");
+					sql.append("cust_zip='"+zip + "'");
+					flag=true;
+			}
+			
+			if(state!="")
+			{
+				if(flag)
+					sql.append(",");
+				sql.append("cust_state='"+state + "'");
+				flag=true;
+			}
+			
+			if(country!="")
+			{
+				if(flag)
+					sql.append(",");
+				sql.append("cust_cntry='"+country + "'");
+				flag=true;
+			}
+			
+			if(cont!="")
+			{
+				if(flag)
+					sql.append(",");
+				sql.append("cust_cont='"+cont + "'");
+				flag=true;
+			}
+			
+			if(mail!="")
+			{
+				if(flag)
+					sql.append(",");
+				sql.append("cust_email='"+mail + "'");
+				flag=true;
+			}
+			
+			sql.append(" WHERE cust_email='"+mail+"'");
+				
+			int rows = stmt.executeUpdate(sql.toString()); 
+			
+			if(rows != 0) {
+				status = true;
+			}
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+		} finally {
+			closeStatement(stmt);
+			closeConnection(con);
+		}
+		
+		return status;
+	}
 	public static ArrayList<Customer> selectAllCustomers() {
 		ArrayList<Customer> customerList = new ArrayList<>(); 
 		
