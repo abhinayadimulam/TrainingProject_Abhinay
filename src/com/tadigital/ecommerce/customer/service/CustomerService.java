@@ -20,7 +20,7 @@ import com.tadigital.ecommerce.customer.dao.CustomerDao;
 import com.tadigital.ecommerce.customer.entity.Customer;
 
 public class CustomerService {
-	CustomerDao employeeDao = new CustomerDao();
+	CustomerDao customerDao = new CustomerDao();
 
 	public boolean loginCustomer(Customer customer) {
 		boolean status = CustomerDao.selectCustomerByEmailAndPassword(customer);
@@ -42,6 +42,21 @@ public class CustomerService {
 		ArrayList<Customer> customerList = CustomerDao.selectAllCustomers();
 
 		return customerList;
+	}
+
+	public boolean updatepassword(String oldpass, String newpass) {
+		
+		boolean status = CustomerDao.updateCustomer(oldpass, newpass);
+		
+		
+		return status;
+	}
+public boolean updatedetails(String fname,String lname,String gender,String address,String city,String zip,String state,String country,String cont,String mail) {
+		
+		boolean status = CustomerDao.updateCustomerdetails(fname,lname, gender, address, city, zip, state, country, cont, mail);
+		
+		
+		return status;
 	}
 
 	public String sendWelcomeMail(String name, String email) {
