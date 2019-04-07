@@ -15,84 +15,14 @@
 <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
-	<div class="container-fluid">
+<div class="container-fluid">
 		<!-- 1 ROW START -->
-		<div class="row row1">
-			<!-- START OF ROW 1 COLUMN 1 -->
-			<div class="col-md-offset-1 col-md-7 ">
-				<p>Contact Us on +91 40 66217777</p>
-			</div>
-			<!-- START OF ROW 1 COLUMN 2 -->
-			<div class="col-md-4 header">
-				<a href="#"><span class="glyphicon glyphicon-log-in"></span>SIGN
-					IN</a> <a href="#"><span class="glyphicon glyphicon-user"></span>SIGN
-					UP</a> <a href="#" class="btn btn-block btn-facebook"><span
-					class="fa fa-facebook"></span></a> <a href="#"
-					class="btn btn-block btn-google-plus header"><span
-					class="fa fa-google-plus"></span></a> <a href="#"
-					class="btn btn-block btn-twitter"><span class="fa fa-twitter"></span></a>
-				<a href="#" class="btn btn-block btn-envelope"><span
-					class="fa fa-envelope"></span></a>
-			</div>
-		</div>
+		<%@ include file="NavigationBar1.jsp"%>
+</div>
 		<!-- 1 ROW END -->
 		<!-- 2 ROW START -->
-		<div class="row row2">
-
-			<!-- START OF ROW 2 COLUMN 1 -->
-			<div class="col-md-offset-1 col-md-4">
-				<img src="images/logo.png" alt="TA-logo" />
-			</div>
-			<!-- START OF ROW 2 COLUMN 2 -->
-			<div class="col-md-6">
-				<ul class="nav navbar-nav navbar-right">
-
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">ELECTRONICS <span
-							class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Page 1-1</a></li>
-							<li><a href="#">Page 1-2</a></li>
-							<li><a href="#">Page 1-3</a></li>
-						</ul></li>
-
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">MEN <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Page 2-1</a></li>
-							<li><a href="#">Page 2-2</a></li>
-							<li><a href="#">Page 2-3</a></li>
-						</ul></li>
-
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">WOMEN <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Page 3-1</a></li>
-							<li><a href="#">Page 3-2</a></li>
-							<li><a href="#">Page 3-3</a></li>
-						</ul></li>
-
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">BABY &amp; KIDS <span
-							class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Page 4-1</a></li>
-							<li><a href="#">Page 4-2</a></li>
-							<li><a href="#">Page 4-3</a></li>
-						</ul></li>
-
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">HOME &amp; FURNITURE <span
-							class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">Page 5-1</a></li>
-							<li><a href="#">Page 5-2</a></li>
-							<li><a href="#">Page 5-3</a></li>
-						</ul></li>
-				</ul>
-
-			</div>
-		</div>
+		<%@ include file="NavigationBar2.jsp"%>
+		<!-- 2 ROW END -->
 
 		<!-- 2 ROW END -->
 		<!-- 3 ROW START -->
@@ -111,7 +41,7 @@
 			<!-- START OF ROW 2 COLUMN 3 -->
 			<div class="col-md-3 topmar">
 				<h4>
-					<a href="#">HOME</a> / <a href="#">New Exception Page</a>
+					<a href="index.jsp">HOME</a> / <a href="#">New Exception Page</a>
 				</h4>
 			</div>
 
