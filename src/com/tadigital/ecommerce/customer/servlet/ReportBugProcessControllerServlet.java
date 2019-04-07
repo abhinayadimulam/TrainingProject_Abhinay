@@ -1,6 +1,8 @@
 package com.tadigital.ecommerce.customer.servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,34 +19,21 @@ import com.tadigital.ecommerce.customer.service.CustomerService;
 @WebServlet("/reportbug")
 public class ReportBugProcessControllerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ReportBugProcessControllerServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		HttpSession sess=request.getSession();
-		String ses= (String)sess.getAttribute("SESS");
-		String email="zoopermanwants@gmail.com";
+		HttpSession sess = request.getSession();
+		String ses = (String) sess.getAttribute("SESS");
+
+		String email = "zoopermanwants@gmail.com";
+
 		CustomerService customer = new CustomerService();
-		customer.sendReporteMail(ses,email);
-		
-	}
+		customer.sendReporteMail(ses, email);
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+		rd.forward(request, response);
+
 	}
 
 }

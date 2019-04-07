@@ -1,7 +1,7 @@
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import="java.io.*" %>
+<%@ page import="java.io.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +40,7 @@
 		<div class="row row2">
 
 			<!-- START OF ROW 2 COLUMN 1 -->
-			<div class="col-md-offset-1 col-md-4"style="margin-top: 15px">
+			<div class="col-md-offset-1 col-md-4">
 				<img src="images/logo.png" alt="TA-logo" />
 			</div>
 			<!-- START OF ROW 2 COLUMN 2 -->
@@ -48,7 +48,8 @@
 				<ul class="nav navbar-nav navbar-right">
 
 					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">ELECTRONICS <span class="caret"></span></a>
+						data-toggle="dropdown" href="#">ELECTRONICS <span
+							class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="#">Page 1-1</a></li>
 							<li><a href="#">Page 1-2</a></li>
@@ -115,42 +116,47 @@
 			</div>
 
 		</div>
-		<br><br><br>
-		
+		<br>
+		<br>
+		<br>
+
 
 		<!-- 3 ROW END -->
 		<!-- 4 ROW START -->
 		<div class="container">
 			<hr>
-			<h3 align="center"><strong>
-				Sorry for the Inconvenience - The Page you are looking for have a Technical Error.
-			</strong>	
+			<h3 align="center">
+				<strong> Sorry for the Inconvenience - The Page you are
+					looking for have a Technical Error. </strong>
 			</h3>
-			<h4 class="excep" align="center"><strong>Kindly proceed to the Home Page or Report this issue to Website Administrator with the Description mentioned below:</strong></h4>
+			<h4 class="excep" align="center">
+				<strong>Kindly proceed to the Home Page or Report this
+					issue to Website Administrator with the Description mentioned
+					below:</strong>
+			</h4>
 			<br>
 			<p align="center">
-       			<a href="index.jsp" class="btn btn-info">
-         			<span class="glyphicon glyphicon-home"></span> Home
-      			</a>
-      			<a href="reportbug" class="btn btn-info">
-         			<span class="fa fa-bug"></span> Report
-      			</a>
-      		</p>
-      		<div class="alert alert-danger text-left">
-						<%@ page isErrorPage="true" import="java.io.*" %>
-						<%
-							StringWriter errors = new StringWriter();
-		    				exception.printStackTrace(new PrintWriter(errors));
-		    				session.setAttribute("SESS", errors.toString());
-							out.print(errors.toString());
-						 %>
+				<a href="index.jsp" class="btn btn-info"> <span
+					class="glyphicon glyphicon-home"></span> Home
+				</a> <a href="reportbug" class="btn btn-info"> <span
+					class="fa fa-bug"></span> Report
+				</a>
+			</p>
+			<div class="alert alert-danger text-left">
+				<%@ page isErrorPage="true" import="java.io.*"%>
+				<%
+					StringWriter errors = new StringWriter();
+					exception.printStackTrace(new PrintWriter(errors));
+					session.setAttribute("SESS", errors.toString());
+					out.print(errors.toString());
+				%>
 			</div>
-				
-				<br/>
-								
-				<hr/>
-      		
-     		
+
+			<br />
+
+			<hr />
+
+
 		</div>
 
 
@@ -213,7 +219,7 @@
 
 
 
-				
+
 
 		<!-- 5 ROW END -->
 		<!-- 6 ROW START -->

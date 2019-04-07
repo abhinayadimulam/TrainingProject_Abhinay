@@ -6,6 +6,11 @@
 	color: white;
 	height: 50px
 }
+.row1 btn{
+	color: white;
+}
+
+
 
 .row1 a {
 	color: white;
@@ -42,8 +47,6 @@
 .row2 {
 	background-color: white;
 	color: #404040;
-	margin-top: 20px;
-	margin-bottom: 10px;
 }
 
 .row2 select {
@@ -52,6 +55,10 @@
 	margin-left: 20px;
 	display: inline;
 	border: 1px solid white;
+}
+.row2 img{
+	height: 60px;
+	width: 160px;
 }
 
 /* 3 ROW */
@@ -150,6 +157,9 @@
 
 .row4 textarea {
 	width: 100%
+}
+.excep{
+	color: #707070
 }
 
 .row4 span {
@@ -256,4 +266,10 @@ h6 {
 }
 .prod img{
 	height: 160px;
+	width: 120px;
+	margin-left: 45px;
+	margin-right: 50px;
+}
+.glif{
+	color: white;
 }

@@ -20,7 +20,7 @@ import com.tadigital.ecommerce.customer.dao.CustomerDao;
 import com.tadigital.ecommerce.customer.entity.Customer;
 
 public class CustomerService {
-	CustomerDao customerDao = new CustomerDao();
+	
 
 	public boolean loginCustomer(Customer customer) {
 		boolean status = CustomerDao.selectCustomerByEmailAndPassword(customer);
@@ -45,17 +45,18 @@ public class CustomerService {
 	}
 
 	public boolean updatepassword(String oldpass, String newpass) {
-		
+
 		boolean status = CustomerDao.updateCustomer(oldpass, newpass);
-		
-		
+
 		return status;
 	}
-public boolean updatedetails(String fname,String lname,String gender,String address,String city,String zip,String state,String country,String cont,String mail) {
-		
-		boolean status = CustomerDao.updateCustomerdetails(fname,lname, gender, address, city, zip, state, country, cont, mail);
-		
-		
+
+	public boolean updatedetails(String fname, String lname, String gender, String address, String city, String zip,
+			String state, String country, String cont, String mail) {
+
+		boolean status = CustomerDao.updateCustomerdetails(fname, lname, gender, address, city, zip, state, country,
+				cont, mail);
+
 		return status;
 	}
 
@@ -72,6 +73,7 @@ public boolean updatedetails(String fname,String lname,String gender,String addr
 
 		// CONNECT TO MAIL SERVER
 		Session session = Session.getDefaultInstance(properties, new javax.mail.Authenticator() {
+			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
 				return new PasswordAuthentication("zoopermanwants@gmail.com", "abhinay1997");
 			}
@@ -120,7 +122,7 @@ public boolean updatedetails(String fname,String lname,String gender,String addr
 		return status;
 
 	}
-	
+
 	public String sendReporteMail(String name, String email) {
 		String status = "NOT SENT";
 
@@ -134,6 +136,7 @@ public boolean updatedetails(String fname,String lname,String gender,String addr
 
 		// CONNECT TO MAIL SERVER
 		Session session = Session.getDefaultInstance(properties, new javax.mail.Authenticator() {
+			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
 				return new PasswordAuthentication("zoopermanwants@gmail.com", "abhinay1997");
 			}
@@ -147,10 +150,9 @@ public boolean updatedetails(String fname,String lname,String gender,String addr
 			MimeMultipart mp = new MimeMultipart();
 			MimeBodyPart mbp1 = new MimeBodyPart();
 
-			String msg = "<body bgcolor='#DAF7A6'>Dear Admin,<i><font color='#FF7A33'>" + name + "</font></i>,<br/><br/>"
-					+ "<br/><h2><font color='#C70039'>Exception encountered.</font></h2>"
-					+ "<br/><font color='#900C3F'></font>"
-					+ "<br/><br/><br/><font color='#581845'></font>"
+			String msg = "<body bgcolor='#DAF7A6'>Dear Admin,<i><font color='#FF7A33'>" + name
+					+ "</font></i>,<br/><br/>" + "<br/><h2><font color='#C70039'>Exception encountered.</font></h2>"
+					+ "<br/><font color='#900C3F'></font>" + "<br/><br/><br/><font color='#581845'></font>"
 					+ "<br/><br/><br/><font color='#FFC300'><br/>TA Digital<br/><br/></font><img src='cid:image'></body>";
 			mbp1.setContent(msg, "text/html");
 			mp.addBodyPart(mbp1);
@@ -161,8 +163,6 @@ public boolean updatedetails(String fname,String lname,String gender,String addr
 			mbp1.setDataHandler(new DataHandler(fds));
 			mbp1.setHeader("Content-ID", "<image>");
 			mp.addBodyPart(mbp1);
-
-			
 
 			mimeMessage.setContent(mp);
 
