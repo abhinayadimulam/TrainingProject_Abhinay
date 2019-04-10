@@ -75,7 +75,7 @@ public class CustomerService {
 		Session session = Session.getDefaultInstance(properties, new javax.mail.Authenticator() {
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("zoopermanwants@gmail.com", "YOUR_PASSWORD");
+				return new PasswordAuthentication("YOUR_MAIL", "YOUR_PASSWORD");
 			}
 		});
 		try {
@@ -138,7 +138,7 @@ public class CustomerService {
 		Session session = Session.getDefaultInstance(properties, new javax.mail.Authenticator() {
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("zoopermanwants@gmail.com", "YOUR_PASSWORD");
+				return new PasswordAuthentication("YOUR_MAIL", "YOUR_PASSWORD");
 			}
 		});
 		try {
